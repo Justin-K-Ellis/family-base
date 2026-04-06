@@ -1,3 +1,5 @@
+import SignInSignUp from "../components/SignInSignUp";
+
 export default function SignUpPage() {
-  return <div>SignUp</div>;
+  return <SignInSignUp mode="signup" />;
 }
