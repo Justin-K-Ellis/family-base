@@ -16,7 +16,9 @@ export default function SignInSignUp(props: SignInSignUpProps) {
       className="card card-border flex flex-col items-center p-2 gap-2 md:w-1/2 mx-0"
     >
       <Title text={titleText} />
+      {/* Error flash */}
       {actionData?.error && <p className="text-red-500">{actionData.error}</p>}
+      {/* Email */}
       <label className="input">
         <span className="label">Email</span>
         <input
@@ -27,6 +29,20 @@ export default function SignInSignUp(props: SignInSignUpProps) {
           required
         />
       </label>
+      {/* Username */}
+      {props.mode === "signup" && (
+        <label className="input">
+          <span className="label">Name</span>
+          <input
+            type="text"
+            placeholder="Papa"
+            name="username"
+            id="username"
+            required
+          />
+        </label>
+      )}
+      {/* Password */}
       <label className="input">
         <span className="label">Password</span>
         <input type="password" name="password" id="password" required />
