@@ -1,4 +1,4 @@
-import type { NavData } from "../types";
+import type { NavData } from "../types/NavData";
 
 export const navData: NavData[] = [
   {
