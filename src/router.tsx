@@ -17,6 +17,7 @@ import SignInPage from "./pages/SignInPage.tsx";
 import SignUpPage from "./pages/SignUpPage.tsx";
 // actions
 import signUpAction from "./actions/signUpAction.ts";
+import signInAction from "./actions/signInAction.ts";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
       {
         path: "sign-in",
         Component: SignInPage,
+        action: signInAction,
       },
       {
         path: "sign-up",
