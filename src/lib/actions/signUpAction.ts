@@ -1,4 +1,4 @@
-import supabase from "../auth/supabase";
+import supabase from "../../auth/supabase";
 import { redirect } from "react-router";
 
 export default async function signUpAction({ request }: { request: Request }) {

@@ -1,5 +1,5 @@
 import { redirect } from "react-router";
-import supabase from "../auth/supabase";
+import supabase from "../../auth/supabase";
 
 export default async function authLoader() {
   try {
