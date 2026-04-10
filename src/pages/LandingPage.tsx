@@ -24,7 +24,7 @@ export default function LandingPage() {
       </div>
       <div
         id="detail-container"
-        className="flex flex-col md:flex-row gap-4 md:justify-center"
+        className="flex flex-col md:flex-row gap-4 md:justify-center p-4 bg-base-200 rounded-lg"
       >
         <p className="text-xl text-center md:my-6">
           A place for the whole family to connect and cooperate.
