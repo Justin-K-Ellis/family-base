@@ -1,4 +1,4 @@
-import supabase from "../auth/supabase";
+import supabase from "../../auth/supabase";
 import { redirect } from "react-router";
 
 export default async function signInAction({ request }: { request: Request }) {
@@ -18,7 +18,7 @@ export default async function signInAction({ request }: { request: Request }) {
       console.error(supabaseError);
       return { error: supabaseError.message };
     }
-    return redirect("/");
+    return redirect("/home");
   } catch (error) {
     console.error(error);
     return { error: "Something went wrong when signing in." };
