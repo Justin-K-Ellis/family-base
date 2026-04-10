@@ -5,9 +5,10 @@ import SignOutBtn from "./SignOutBtn";
 
 export default function SignedInNav({ username }: { username: string }) {
   const userData: NavData = {
+    id: 4,
     text: `Welcome, ${username}`,
     icon: "",
-    url: "",
+    url: "/home",
   };
 
   const fullNavData = [userData, ...navData];
@@ -17,7 +18,7 @@ export default function SignedInNav({ username }: { username: string }) {
       {fullNavData.map((data) => (
         <NavLink
           to={data.url}
-          key={data.url}
+          key={data.id}
           className={"flex md:btn md:btn-ghost text-xl md:text-lg"}
         >
           <span>{data.icon}</span>
