@@ -13,7 +13,7 @@ export default function SignInSignUp(props: SignInSignUpProps) {
   return (
     <Form
       method="post"
-      className="card card-border flex flex-col items-center p-2 gap-2 md:w-1/2 mx-0"
+      className="card card-border flex flex-col items-center p-2 gap-2 md:w-1/2 mx-0 bg-base-200"
     >
       <Title text={titleText} />
       {/* Error flash */}
