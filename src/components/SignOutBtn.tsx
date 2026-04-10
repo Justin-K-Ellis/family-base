@@ -13,7 +13,7 @@ export default function SignOutBtn() {
         console.error("Supabase error:", supabaseError);
         alert((errMsg += `\n${supabaseError?.message}`));
       }
-      navigate("/landing");
+      navigate("/");
     } catch (error) {
       console.error("Other error:", error);
       alert(errMsg);
