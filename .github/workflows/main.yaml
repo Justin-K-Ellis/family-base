@@ -1,0 +1,26 @@
+name: main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node:25.8.1
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build dist
+        run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{secrets.VITE_SUPABASE_URL}}
+          VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY: ${{{secrets.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY}}}
