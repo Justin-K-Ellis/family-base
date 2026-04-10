@@ -1,7 +1,8 @@
 import { Link } from "react-router";
 import img from "../assets/img/hero-family.png";
 import SignedOutNav from "../components/SignedOutNav";
-import { useAuth } from "../auth/AuthProvider";
+// import { useAuth } from "../auth/AuthProvider";
+import useAuth from "../auth/useAuth";
 
 export default function LandingPage() {
   const { session } = useAuth();
