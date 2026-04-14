@@ -1,6 +1,6 @@
-import { Form } from "react-router";
+import { useActionData, useNavigation, Form } from "react-router";
 import Title from "./Title";
-import { useActionData } from "react-router";
+import LoadingSpinner from "./LoadingSpinner";
 
 interface SignInSignUpProps {
   mode: "signin" | "signup";
@@ -9,6 +9,9 @@ interface SignInSignUpProps {
 export default function SignInSignUp(props: SignInSignUpProps) {
   const titleText = props.mode === "signin" ? "Sign In" : "Sign Up";
   const actionData = useActionData();
+  const navigation = useNavigation();
+
+  if (navigation.state === "loading") return <LoadingSpinner />;
 
   return (
     <Form
@@ -47,7 +50,11 @@ export default function SignInSignUp(props: SignInSignUpProps) {
         <span className="label">Password</span>
         <input type="password" name="password" id="password" required />
       </label>
-      <button type="submit" className="btn btn-primary">
+      <button
+        type="submit"
+        disabled={navigation.state === "submitting"}
+        className="btn btn-primary"
+      >
         {titleText}
       </button>
     </Form>

@@ -1,8 +1,9 @@
 import supabase from "../auth/supabase";
-import { useNavigate } from "react-router";
+import { useNavigate, useNavigation } from "react-router";
 
 export default function SignOutBtn() {
   const navigate = useNavigate();
+  const navigation = useNavigation();
 
   async function handleSignOut(): Promise<void> {
     let errMsg =
@@ -24,6 +25,7 @@ export default function SignOutBtn() {
     <button
       type="button"
       onClick={handleSignOut}
+      disabled={navigation.state !== "idle"}
       className="btn btn-sm md:btn-md btn-secondary md:ml-2"
     >
       Sign Out
