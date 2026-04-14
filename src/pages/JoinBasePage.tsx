@@ -1,3 +1,3 @@
 export default function JoinBasePage() {
-  return <div>JoinBasePage</div>;
+  return <p>join a base</p>;
 }
